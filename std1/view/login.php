@@ -25,19 +25,19 @@
 }
 
 body {
-    background-color: #fef492;
+    background-color: #f46603;
 }
 </style>
 
 <body onLoad="login()">
-    <img src="../uploads/EVENING.jpg" class="bg" />
+    <img src="../uploads/34d_bg.jpg" class="bg" />
 
     <!--Success! - Insert-->
     <div class="modal fade" id="loginFrom" tabindex="-1" role="dialog" aria-labelledby="loginFrom" aria-hidden="true">
         <div class="modal-dialog" style="top:150px;">
             <div class="modal-content" style="border-radius:15px;">
                 <div class="modal-header"
-                    style="background-color:#fd9146; color:#fff; border-top-left-radius:15px; border-top-right-radius:15px;">
+                    style="background-color:#f46603; color:#fff; border-top-left-radius:15px; border-top-right-radius:15px;">
                     <h4>User Login</h4>
                 </div>
                 <div class="modal-body bgColorWhite">
@@ -57,7 +57,7 @@ body {
                         <div class="box-footer">
                             <input type="hidden" name="do" value="user_login" />
                             <button type="submit" class="btn btn-info" id="btnSubmit"
-                                style="background-color:#fd9146; border-color:#fd9146; border-radius:10px;">Submit</button>
+                                style="background-color:#f46603; border-color:#f46603; border-radius:10px;">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -82,7 +82,6 @@ body {
         var password = $('#password').val();
 
         if (uname == '') {
-            //MSK-00099-name
             $("#btnSubmit").attr("disabled", true);
             $('#divEmail').addClass('has-error has-feedback');
             $('#divEmail').append(
@@ -90,17 +89,14 @@ body {
             );
 
             $("#email").keydown(function() {
-                //MSK-00100-name
                 $("#btnSubmit").attr("disabled", false);
                 $('#divEmail').removeClass('has-error has-feedback');
                 $('#spanEmail').remove();
-
             });
 
         }
 
         if (password == '') {
-            //MSK-00099-name
             $("#btnSubmit").attr("disabled", true);
             $('#divPassword').addClass('has-error has-feedback');
             $('#divPassword').append(
@@ -108,18 +104,16 @@ body {
             );
 
             $("#password").keydown(function() {
-                //MSK-00100-name
                 $("#btnSubmit").attr("disabled", false);
                 $('#divPassword').removeClass('has-error has-feedback');
                 $('#spanPassword').remove();
-
             });
 
         }
 
 
         if (uname == '' || password == '') {
-            //MSK-000098- form validation failed
+            //form validation failed
             $("#btnSubmit").attr("disabled", true);
             e.preventDefault();
             return false;
@@ -154,10 +148,9 @@ body {
 
     <?php
 if(isset($_GET["do"])&&($_GET["do"]=="login_error")){
-//MSK-000143-6-PHP-JS-INSERT
- 
+
 	$msg=$_GET['msg'];
-	
+
 	if($msg==1){
 		echo"
 			<script>
@@ -171,9 +164,7 @@ if(isset($_GET["do"])&&($_GET["do"]=="login_error")){
 
 			</script>
 		";
-	
 	}
-	
 }
 ?>
 
