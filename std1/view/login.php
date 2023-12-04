@@ -8,7 +8,6 @@
 
 }
 
-
 .msk-set-color-tooltip+.tooltip>.tooltip-inner {
 
     min-width: 180px;

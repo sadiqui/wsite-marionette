@@ -6,7 +6,7 @@
             <!-- Logo -->
             <a href="" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><strong>INS</strong></span>
+                <span class="logo-mini"><strong>MHS</strong></span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg"><strong>Marionette</strong></span>
             </a>
@@ -167,7 +167,7 @@ $my_type=$_SESSION["type"];
 $sql="SELECT count(id)
       FROM my_friends
       WHERE my_index='$my_index' AND _status='Pending' AND _isread='0'";
-	  
+
 $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_assoc($result);
 $unread_count=$row['count(id)'];
@@ -287,7 +287,7 @@ while($row=mysqli_fetch_assoc($result)){
 	$sql1="SELECT count(id)
 		  FROM online_chat
 		  WHERE user_index='$friend_index' AND _isread='0'";
-		  
+
 	$result1=mysqli_query($conn,$sql1);
 	$row1=mysqli_fetch_assoc($result1);
 	$unread_msg_count+=$row1['count(id)'];
@@ -351,7 +351,7 @@ $file_path='';
 		}
 		
 		if($friend_type == "Teacher"){
-			
+
 			$sql1="SELECT * FROM teacher WHERE index_number='$friend_index'";	
 		
 			$result1=mysqli_query($conn,$sql1);
@@ -642,12 +642,9 @@ if($type=="Admin"){
 
         <script>
         $('body').on('click', '.confirm-delete-friend-req', function(e) {
-            //MSK-000122		
             e.preventDefault();
             var id = $(this).data('id');
             $('#deleteConfirmReq').data('id1', id).modal('show'); //MSK-000123
-
-
         });
 
         $('#btnYesReq').click(function() {
@@ -658,21 +655,20 @@ if($type=="Admin"){
 
             var do1 = "delete_friend_request";
 
-            var xhttp = new XMLHttpRequest(); //MSK-000127-Ajax Start  
+            var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    //MSK-000129
                     var myArray = eval(xhttp.responseText);
 
-                    if (myArray[0] == 1) { //MSK-000130
+                    if (myArray[0] == 1) {
 
                         $("#deleteConfirmReq").modal('hide');
                         Delete_alert(myArray[0])
 
                     }
 
-                    if (myArray[0] == 2) { //MSK-000137
+                    if (myArray[0] == 2) {
 
                         $("#deleteConfirmReq").modal('hide');
                         Delete_alert(myArray[0])
@@ -685,12 +681,11 @@ if($type=="Admin"){
 
             xhttp.open("GET", "../model/delete_friend_request.php?my_index=" + my_index + "&friend_index=" +
                 friend_index + "&do=" + do1, true);
-            xhttp.send(); //MSK-000127-Ajax End
+            xhttp.send();
 
         });
 
         function Delete_alert(msg) {
-            //MSK-000136	
             if (msg == 1) {
 
                 var myModal = $('#delete_Success');
