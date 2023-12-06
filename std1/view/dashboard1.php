@@ -187,8 +187,9 @@ $name=$row['i_name'];
         <!-- Info boxes -->
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-blue" style="border-radius:15px;"><img src="../uploads/cap.png"
+                            alt="student" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Student</span>
@@ -211,8 +212,9 @@ $total_count1=$row1['count(id)'];
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-grey" style="border-radius:15px;"><img src="../uploads/teacher.png"
+                            alt="teacher" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Teacher</span>
@@ -239,8 +241,9 @@ $total_count2=$row2['count(id)'];
             <div class="clearfix visible-sm-block"></div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-yellow" style="border-radius:15px;"><img src="../uploads/profits.png"
+                            alt="monthly_fee" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Monthly Fee</span>
@@ -261,11 +264,11 @@ $result=mysqli_query($conn,$sql);
     
 if(mysqli_num_rows($result) > 0){
     while($row=mysqli_fetch_assoc($result)){
-        
+
 		$monthly_fee+=$row['s_fee'];
 		$monthly_fee = number_format($monthly_fee, 2, '.', '');
 	}
-	
+
 }
 
 ?>
@@ -277,8 +280,9 @@ if(mysqli_num_rows($result) > 0){
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-orange" style="border-radius:15px;"><img src="../uploads/finance.png"
+                            alt="total_paid" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Paid</span>
@@ -302,10 +306,9 @@ $total_paid=$row3['SUM(paid)'];
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <h5><?php echo $name; ?>,<strong><span style="color:#cf4ed4;"> Welcome back! </span></strong></h5>
+        <h5><?php echo $name; ?>,<strong><span style="color:#32b4a2;"> Welcome back! </span></strong></h5>
 
         <div class="row" id="table1">
-            <!--MSK-000132-1-->
             <div class="col-md-8">
                 <center>
                     <h4 class="box-title">Monthly Attendance</h4>

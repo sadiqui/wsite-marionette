@@ -188,8 +188,9 @@ $id=$row['id'];
         <!-- Info boxes -->
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-blue" style="border-radius:15px;"><img src="../uploads/cap.png"
+                            alt="student" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">My STUDENT</span>
@@ -223,8 +224,9 @@ while($row1=mysqli_fetch_assoc($result1)){
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-grey" style="border-radius:15px;"><img src="../uploads/teacher.png"
+                            alt="teacher" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">All Student</span>
@@ -252,14 +254,15 @@ $all_student=$row1['count(id)'];
             <div class="clearfix visible-sm-block"></div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-yellow" style="border-radius:15px;"><img src="../uploads/profits.png"
+                            alt="monthly_salary" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Monthly Salary</span>
                         <?php
 include_once('../controller/config.php');
-    
+
 
 $current_year=date('Y'); 
 $current_month=date('F'); 
@@ -325,14 +328,10 @@ if(mysqli_num_rows($result1) > 0){
 			$row2=mysqli_fetch_assoc($result2);
 			$subtotal1=$row2['sum(subtotal)'];
 			$current_total1+=$subtotal1;
-				
 		}
-		
-	}		
-		
-				
+	}
 }
-			
+
     $current_total_salary=$current_total+$current_total1;
 	$current_total_salary = number_format($current_total_salary, 2, '.', '');
 
@@ -345,8 +344,9 @@ if(mysqli_num_rows($result1) > 0){
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-orange" style="border-radius:15px;"><img src="../uploads/finance.png"
+                            alt="total_earning" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Earning</span>
@@ -371,10 +371,9 @@ $total_earn=$row3['SUM(paid)'];
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <h5><?php echo $name; ?>,<strong><span style="color:#cf4ed4;"> Welcome back! </span></strong></h5>
+        <h5><?php echo $name; ?>,<strong><span style="color:#32b4a2;"> Welcome back! </span></strong></h5>
 
         <div class="row" id="table1">
-            <!--MSK-000132-1-->
             <div class="col-md-8">
                 <center>
                     <h4 class="box-title">Monthly Salary</h4>

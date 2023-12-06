@@ -66,7 +66,6 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 }
 
 .cal-table {
-
     width: 100%;
     padding: 0;
     margin: 0;
@@ -82,7 +81,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 .tHead {
 
     height: 40px;
-    background-color: #8e1c82;
+    background-color: #c95202;
     color: #FFF;
     text-align: center;
     border: 1px solid #FFF;
@@ -97,7 +96,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 .td_no_number {
     border: 1px solid white;
     width: 70px;
-    background-color: #979045;
+    background-color: #97454c;
     padding: 0;
 }
 
@@ -106,7 +105,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 .cal-number-td {
     border: 1px solid white;
     width: 70px;
-    background-color: #677be2;
+    background-color: #e2ce67;
     color: white;
 
 
@@ -115,7 +114,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 .h5 {
     color: #FFF;
     display: inline-block;
-    background: #636;
+    background: #666633;
     width: 15px;
     height: 15px;
     font-size: 11px;
@@ -186,8 +185,9 @@ $name=$row['i_name'];
         <!-- Info boxes -->
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-blue" style="border-radius:15px;"><img src="../uploads/cap.png"
+                            alt="student" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Student</span>
@@ -210,8 +210,9 @@ $total_count1=$row1['count(id)'];
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-grey" style="border-radius:15px;"><img src="../uploads/teacher.png"
+                            alt="teacher" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Teacher</span>
@@ -238,8 +239,9 @@ $total_count2=$row2['count(id)'];
             <div class="clearfix visible-sm-block"></div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-yellow" style="border-radius:15px;"><img src="../uploads/profits.png"
+                            alt="monthly_income" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Monthly Income</span>
@@ -265,8 +267,9 @@ $monthly_income=$row3['SUM(paid)'];
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-orange" style="border-radius:15px;"><img src="../uploads/finance.png"
+                            alt="total_income" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Income</span>
@@ -291,10 +294,9 @@ $total_income=$row4['SUM(paid)'];
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <h5><?php echo $name; ?>,<strong><span style="color:#cf4ed4;"> Welcome back! </span></strong></h5>
+        <h5><?php echo $name; ?>,<strong><span style="color:#32b4a2;"> Welcome back! </span></strong></h5>
 
         <div class="row" id="table1">
-            <!--MSK-000132-1-->
             <div class="col-md-8">
                 <center>
                     <h4 class="box-title">Monthly Income</h4>
@@ -355,13 +357,11 @@ $monthly_income2=0;
 $month=array("January","February","March","April","May","June","July","August","September","October","November","December");
 
 for($i=0; $i<count($month); $i++){
-	
 	$sql="SELECT SUM(paid) FROM student_payment WHERE year='$current_year' AND month='$month[$i]'";
 	$result=mysqli_query($conn,$sql);
 	$row=mysqli_fetch_assoc($result);
 	$monthly_income1.=$prefix.'"'.$row['SUM(paid)'].'"';
 	$prefix=',';
-	
 }
 
 echo "<script>showBarChart('$monthly_income1');</script>";
@@ -454,7 +454,7 @@ echo "<script>showBarChart('$monthly_income1');</script>";
 
                     document.getElementById("calendar_month_year").innerHTML = month_name[month];
                     document.getElementById("calendar_dates").appendChild(calendar);
-                    $("#td_" + current_date).css("background-color", "#319a5b");
+                    $("#td_" + current_date).css("background-color", "#c1723d");
 
                     var count1 = start_date.length;
                     var k = 0;
@@ -680,7 +680,6 @@ for($i=0; $i<count($month); $i++){
 	$row=mysqli_fetch_assoc($result);
 	$monthly_std_reg.=$prefix.'"'.$row['COUNT(id)'].'"';
 	$prefix=',';
-	
 }
 
 echo "<script>showLineChart('$monthly_std_reg');</script>";

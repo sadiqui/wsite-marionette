@@ -188,8 +188,9 @@ $name=$row1['i_name'];
         <!-- Info boxes -->
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-blue" style="border-radius:15px;"><img src="../uploads/cap.png"
+                            alt="student" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Student</span>
@@ -212,8 +213,9 @@ $total_count1=$row1['count(id)'];
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-grey" style="border-radius:15px;"><img src="../uploads/teacher.png"
+                            alt="teacher" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Teacher</span>
@@ -241,8 +243,9 @@ $total_count2=$row2['count(id)'];
             <div class="clearfix visible-sm-block"></div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-yellow" style="border-radius:15px;"><img src="../uploads/profits.png"
+                            alt="monthly_fee" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">Monthly Fee</span>
@@ -284,8 +287,9 @@ if(mysqli_num_rows($result) > 0){
             </div>
             <!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+                <div class="info-box" style="border-radius:15px;">
+                    <span class="info-box-icon bg-orange" style="border-radius:15px;"><img src="../uploads/finance.png"
+                            alt="total_paid" style="width:50%; height:auto"></span>
 
                     <div class="info-box-content">
                         <span class="info-box-text">My Son's Total Paid</span>
@@ -315,10 +319,9 @@ $total_paid=$row3['SUM(paid)'];
             <!-- /.col -->
         </div>
         <!-- /.row -->
-        <h5><?php echo $name; ?>,<strong><span style="color:#cf4ed4;"> Welcome back! </span></strong></h5>
+        <h5><?php echo $name; ?>,<strong><span style="color:#32b4a2;"> Welcome back! </span></strong></h5>
 
         <div class="row" id="table1">
-            <!--MSK-000132-1-->
             <div class="col-md-8">
                 <center>
                     <h4 class="box-title">My Son's Monthly Attendance</h4>
@@ -383,7 +386,6 @@ for($i=0; $i<count($month); $i++){
 	$row=mysqli_fetch_assoc($result);
 	$monthly_attendance.=$prefix.'"'.$row['COUNT(id)'].'"';
 	$prefix=',';
-	
 }
 
 echo "<script>showBarChart('$monthly_attendance');</script>";
@@ -415,13 +417,13 @@ echo "<script>showBarChart('$monthly_attendance');</script>";
 
         function ShowEvents(status, my_index, my_type) {
 
-            var d = new Date(); //new Date('2017','08','25');
+            var d = new Date(); //new Date('2023','11','25');
             var month_name = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
                 'Octomber', 'November', 'December'
             ];
 
             var m1 = d.getMonth(); //0-11
-            var y1 = d.getFullYear(); //2017
+            var y1 = d.getFullYear(); //2023
 
             var current_date = d.getDate();
 
@@ -447,12 +449,12 @@ echo "<script>showBarChart('$monthly_attendance');</script>";
                 $('#btn2').css('pointer-events', 'none');
             }
 
-            var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
+            var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    //MSK-00107 
-                    document.getElementById('row').innerHTML = this.responseText; //MSK-000132
+
+                    document.getElementById('row').innerHTML = this.responseText;
 
                     var start_date = $('#start_date').val().split(',');
                     var end_date = $('#end_date').val().split(',');
@@ -460,17 +462,17 @@ echo "<script>showBarChart('$monthly_attendance');</script>";
                     var event_id = $('#event_id').val().split(',');
 
                     var month = m3; //0-11
-                    var year = y1; //2017 
+                    var year = y1; //2023
                     var first_date = month_name[month] + " " + 1 + " " + year;
 
                     var tmp = new Date(first_date).toDateString();
-                    // Tue Aug 01 2017...
+                    // Tue Dec 01 2023...
 
                     var first_day = tmp.substring(0, 3); //Thu
                     var day_name = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
                     var day_no = day_name.indexOf(first_day); //4
                     var days = new Date(year, month + 1, 0).getDate(); //31
-                    // Thu Aug 31 2017...
+                    // Thu Nov 31 2023...
 
                     var calendar = get_calendar(day_no, days);
 
@@ -518,18 +520,18 @@ echo "<script>showBarChart('$monthly_attendance');</script>";
         <script>
         function showEvent(event_id) {
 
-            var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
+            var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById('showEvent').innerHTML = this.responseText; //MSK-000132
+                    document.getElementById('showEvent').innerHTML = this.responseText;
                     $('#modalviewEvent').modal('show');
                 }
 
             };
 
             xhttp.open("GET", "show_events1.php?event_id=" + event_id, true);
-            xhttp.send(); //MSK-00105-Ajax End
+            xhttp.send();
         };
 
         function get_calendar(day_no, days) {

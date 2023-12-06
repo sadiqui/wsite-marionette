@@ -23,15 +23,15 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                                     </div>
                                 </div>
                                 <div class="col-xs-5 class-name">
-                                	<h2>ILovePrograming</h2>
+                                	<h2>Marionette High School</h2>
                                 	<div class="class-address">
-                                    	455 Foggy Heights,<br>
-									    AZ 85004, US
+                                    	455 Youssoufia Heights,<br>
+									    MAR 85004, Morocco
                                     </div>
                                 </div>
                                 <div class="col-xs-4 class-email text-right ">
-                                    	Email: msk.ms4@gmail.com<br>
-                                        Phone: 111-111-1111 <br> 
+                                    	Email: contact@marionette.ma<br>
+                                        Phone: +212 711 111 111 <br>
                                 </div>
                         	</div>
                             <div class="row ">
