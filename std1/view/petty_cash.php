@@ -484,18 +484,17 @@ if(mysqli_num_rows($result) > 0) {
                                     </div>
                                 </div>
                                 <div class="col-xs-5 class-name">
-                                    <h2>ILovePrograming</h2>
+                                    <h2>Marionette High School</h2>
                                     <div class="class-address">
-                                        455 Foggy Heights,<br>
-                                        AZ 85004, US
+                                        455 Youssoufia Heights,<br>
+                                        MAR 85004, Morocco
                                     </div>
                                 </div>
                                 <div class="col-xs-4 class-email text-right ">
-                                    Email: msk.ms4@gmail.com<br>
-                                    Phone: 111-111-1111 <br>
+                                    Email: contact@marionette.ma<br>
+                                    Phone: +212 711 111 111
                                 </div>
-                            </div>
-                            <?php  
+                                <?php  
 $current_year=date('Y');
 $current_month=date('F');
 $current_date=date('Y-m-d');
@@ -505,66 +504,67 @@ $type=$_SESSION["type"];
 
 ?>
 
-                            <div class="row ">
-                                <center>
-                                    <h1>Petty Cash</h1>
-                                </center>
-                                <a href="#" onClick="addNewRow(this)" class="btn btn-success btn-xs "><span
-                                        class="glyphicon glyphicon-plus"></span></a><!-- MSK-00094-->
-                                <a href="#" onClick="deleteRow(this)" class="btn btn-danger btn-xs "
-                                    style="margin-right:2px;"><span class="glyphicon glyphicon-remove"></span></a>
-                                <!-- MSK-00094-->
-                                <div class="col-xs-5 col-xs-offset-7 text-right msk-t">
-                                    <div class="text-right">
-                                        Year: <?php echo $current_year; ?><br>
-                                        Month: <?php echo $current_month; ?><br>
-                                        Date: <?php echo $current_date; ?>
+                                <div class="row ">
+                                    <center>
+                                        <h1>Petty Cash</h1>
+                                    </center>
+                                    <a href="#" onClick="addNewRow(this)" class="btn btn-success btn-xs "><span
+                                            class="glyphicon glyphicon-plus"></span></a><!-- MSK-00094-->
+                                    <a href="#" onClick="deleteRow(this)" class="btn btn-danger btn-xs "
+                                        style="margin-right:2px;"><span class="glyphicon glyphicon-remove"></span></a>
+                                    <!-- MSK-00094-->
+                                    <div class="col-xs-5 col-xs-offset-7 text-right msk-t">
+                                        <div class="text-right">
+                                            Year: <?php echo $current_year; ?><br>
+                                            Month: <?php echo $current_month; ?><br>
+                                            Date: <?php echo $current_date; ?>
 
+                                        </div>
                                     </div>
-                                </div>
-                            </div> <!-- / end client details section -->
-                            <form role="form" action="../index.php" method="post" id="form1" class="form-horizontal">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <th class="col-md-1">ID</th>
-                                        <th class="col-md-6">Description</th>
-                                        <th class="col-md-2">Amount($)</th>
-                                    </thead>
-                                    <tbody class="tBody">
-                                        <tr id="tr_1">
-                                            <td id="tdCount_1"> 1</td>
-                                            <td id="tdDesc_1"><input type="text" id="textDesc_1"
-                                                    class="_desc form-control" placeholder="Description 1"
-                                                    autocomplete="off" name="_desc[]"></td>
-                                            <td id="tdAmount_1"><input type="text" id="textAmount_1"
-                                                    class="amount form-control" placeholder="25.50" autocomplete="off"
-                                                    name="amount[]"></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                </div> <!-- / end client details section -->
+                                <form role="form" action="../index.php" method="post" id="form1"
+                                    class="form-horizontal">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <th class="col-md-1">ID</th>
+                                            <th class="col-md-6">Description</th>
+                                            <th class="col-md-2">Amount($)</th>
+                                        </thead>
+                                        <tbody class="tBody">
+                                            <tr id="tr_1">
+                                                <td id="tdCount_1"> 1</td>
+                                                <td id="tdDesc_1"><input type="text" id="textDesc_1"
+                                                        class="_desc form-control" placeholder="Description 1"
+                                                        autocomplete="off" name="_desc[]"></td>
+                                                <td id="tdAmount_1"><input type="text" id="textAmount_1"
+                                                        class="amount form-control" placeholder="25.50"
+                                                        autocomplete="off" name="amount[]"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <!--/.panel-body -->
+                            <div class="panel-footer inv-footer text-right" id="msk123456">
+                                <input type="hidden" name="do" value="add_petty_cash">
+                                <input type="hidden" name="_status" value="Active">
+                                <input type="hidden" name="user_type" value="Admin">
+                                <input type="hidden" name="index_number" value="<?php echo $index; ?>">
+                                <input type="hidden" name="received_type" value="<?php echo $type; ?>">
+                                <input type="submit" class="btn btn-primary" id="btnSubmit" value="Submit">
+                            </div>
+                            </form>
                         </div>
-                        <!--/.panel-body -->
-                        <div class="panel-footer inv-footer text-right" id="msk123456">
-                            <input type="hidden" name="do" value="add_petty_cash">
-                            <input type="hidden" name="_status" value="Active">
-                            <input type="hidden" name="user_type" value="Admin">
-                            <input type="hidden" name="index_number" value="<?php echo $index; ?>">
-                            <input type="hidden" name="received_type" value="<?php echo $type; ?>">
-                            <input type="submit" class="btn btn-primary" id="btnSubmit" value="Submit">
-                        </div>
-                        </form>
+                        <!--/. panel-->
                     </div>
-                    <!--/. panel-->
+                    <!--/.row -->
                 </div>
-                <!--/.row -->
+                <!--/.modal-content -->
             </div>
-            <!--/.modal-content -->
+            <!--/.modal-dialog -->
         </div>
-        <!--/.modal-dialog -->
-    </div>
-    <!--/.modal -->
+        <!--/.modal -->
 
-    <?php
+        <?php
 if(isset($_GET["do"])&&($_GET["do"]=="alert_from_insert")){
 //MSK-000143-6-PHP-JS-INSERT
  
@@ -608,244 +608,245 @@ if(isset($_GET["do"])&&($_GET["do"]=="alert_from_insert")){
  
 ?>
 
-    <!-- //MSK-000124 Modal-Approve Confirm Popup -->
-    <div class="modal msk-fade" id="approveConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <button type="button" class="close" data-dismiss="modal"><span
-                            aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="frm_title">Approval</h4>
-                </div>
-                <div class="modal-body bgColorWhite">
-                    <strong style="color:red;">Are you sure?</strong> Do you want to Approve this Petty Cash
-                </div>
-                <div class="modal-footer">
-                    <a href="#" style="margin-left:10px;" id="btnYesApprove"
-                        class="deletebtn btn btn-danger col-sm-2 pull-right">Yes</a><!-- MSK-000125 -->
-                    <button type="button" class="btn btn-primary col-sm-2 pull-right" data-dismiss="modal"
-                        id="frm_cancel">No</button>
+        <!-- //MSK-000124 Modal-Approve Confirm Popup -->
+        <div class="modal msk-fade" id="approveConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <button type="button" class="close" data-dismiss="modal"><span
+                                aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="frm_title">Approval</h4>
+                    </div>
+                    <div class="modal-body bgColorWhite">
+                        <strong style="color:red;">Are you sure?</strong> Do you want to Approve this Petty Cash
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" style="margin-left:10px;" id="btnYesApprove"
+                            class="deletebtn btn btn-danger col-sm-2 pull-right">Yes</a><!-- MSK-000125 -->
+                        <button type="button" class="btn btn-primary col-sm-2 pull-right" data-dismiss="modal"
+                            id="frm_cancel">No</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="pettyCashDetails">
+        <div id="pettyCashDetails">
 
-    </div>
+        </div>
 
-    <script>
-    $(document).ready(function() {
-        var rowCount1 = $('.tBody1 tr').length;
+        <script>
+        $(document).ready(function() {
+            var rowCount1 = $('.tBody1 tr').length;
 
 
-        for (i = 1; i < rowCount1 + 1; i++) {
+            for (i = 1; i < rowCount1 + 1; i++) {
 
-            var num1 = document.getElementById('td_paid_' + i).innerHTML;
+                var num1 = document.getElementById('td_paid_' + i).innerHTML;
 
-            if (!isNaN(num1)) {
-                $("#aApprove_" + i).hide();
+                if (!isNaN(num1)) {
+                    $("#aApprove_" + i).hide();
+                }
+
+            }
+
+        });
+
+        function addNewRow() {
+
+            var last_id = $('.tBody tr:last').attr('id').replace('tr_', '');
+
+            last_id++;
+
+            var tr = '<tr id="tr_' + last_id + '">' +
+                '<td id="tdCount_' + last_id + '">' + last_id + '</td> ' +
+                '<td id="tdDesc_' + last_id + '"><input type="text" class="_desc form-control" id="textDesc_' +
+                last_id +
+                '" name="_desc[]"  placeholder="Description ' + last_id + '" autocomplete="off"/> </td>' +
+                '<td id="tdAmount_' + last_id + '"><input type="text" class="amount form-control" id="textAmount_' +
+                last_id + '" name="amount[]"  placeholder="25.50" autocomplete="off"/> </td>' +
+                '</tr>';
+
+            $('.tBody').append(tr);
+
+        };
+
+        function deleteRow() {
+
+            var last_id = $('.tBody tr:last').attr('id').replace('tr_', '');
+
+            if (last_id != 1) {
+                $('.tBody tr:last').remove();
+                $("#btnSubmit1").attr("disabled", false);
             }
 
         }
 
-    });
+        $("#form2").submit(function(e) {
 
-    function addNewRow() {
+            var rowCount = $('.tBody tr').length;
 
-        var last_id = $('.tBody tr:last').attr('id').replace('tr_', '');
+            for (i = 1; i < rowCount + 1; i++) {
 
-        last_id++;
+                var markRange = document.getElementById('mark_range_text_' + i).value;
+                var markGrade = document.getElementById('mark_grade_text_' + i).value;
 
-        var tr = '<tr id="tr_' + last_id + '">' +
-            '<td id="tdCount_' + last_id + '">' + last_id + '</td> ' +
-            '<td id="tdDesc_' + last_id + '"><input type="text" class="_desc form-control" id="textDesc_' + last_id +
-            '" name="_desc[]"  placeholder="Description ' + last_id + '" autocomplete="off"/> </td>' +
-            '<td id="tdAmount_' + last_id + '"><input type="text" class="amount form-control" id="textAmount_' +
-            last_id + '" name="amount[]"  placeholder="25.50" autocomplete="off"/> </td>' +
-            '</tr>';
-
-        $('.tBody').append(tr);
-
-    };
-
-    function deleteRow() {
-
-        var last_id = $('.tBody tr:last').attr('id').replace('tr_', '');
-
-        if (last_id != 1) {
-            $('.tBody tr:last').remove();
-            $("#btnSubmit1").attr("disabled", false);
-        }
-
-    }
-
-    $("#form2").submit(function(e) {
-
-        var rowCount = $('.tBody tr').length;
-
-        for (i = 1; i < rowCount + 1; i++) {
-
-            var markRange = document.getElementById('mark_range_text_' + i).value;
-            var markGrade = document.getElementById('mark_grade_text_' + i).value;
-
-            if (markRange == "") {
-                $("#btnSubmit1").attr("disabled", true);
-                $("#range_td_" + i).addClass('has-feedback');
-                $("#range_td_" + i).append(
-                    '<span id="spanMarkRange" class="glyphicon glyphicon-remove form-control-feedback set-color-tooltip" data-toggle="tooltip" title="The mark range is required" ></span>'
+                if (markRange == "") {
+                    $("#btnSubmit1").attr("disabled", true);
+                    $("#range_td_" + i).addClass('has-feedback');
+                    $("#range_td_" + i).append(
+                        '<span id="spanMarkRange" class="glyphicon glyphicon-remove form-control-feedback set-color-tooltip" data-toggle="tooltip" title="The mark range is required" ></span>'
                     );
 
-                $("#mark_range_text_" + i).keydown(function() {
-                    $("#btnSubmit1").attr("disabled", false);
-                    $("#range_td_" + i).removeClass('has-feedback');
-                    $("#spanMarkRange").remove();
-                });
+                    $("#mark_range_text_" + i).keydown(function() {
+                        $("#btnSubmit1").attr("disabled", false);
+                        $("#range_td_" + i).removeClass('has-feedback');
+                        $("#spanMarkRange").remove();
+                    });
 
-            }
+                }
 
-            if (markGrade == "") {
-                $("#btnSubmit1").attr("disabled", true);
-                $('#grade_td_' + i).addClass('has-feedback');
-                $('#grade_td_' + i).append(
-                    '<span id="spanMarkGrade" class="glyphicon glyphicon-remove form-control-feedback set-color-tooltip" data-toggle="tooltip" title="The mark grade is required" ></span>'
+                if (markGrade == "") {
+                    $("#btnSubmit1").attr("disabled", true);
+                    $('#grade_td_' + i).addClass('has-feedback');
+                    $('#grade_td_' + i).append(
+                        '<span id="spanMarkGrade" class="glyphicon glyphicon-remove form-control-feedback set-color-tooltip" data-toggle="tooltip" title="The mark grade is required" ></span>'
                     );
 
-                $("#mark_grade_text_" + i).keydown(function() {
-                    $('#btnSubmit1').attr("disabled", false);
-                    $('#grade_td_' + i).removeClass('has-feedback');
-                    $("#spanMarkGrade").remove();
-                });
+                    $("#mark_grade_text_" + i).keydown(function() {
+                        $('#btnSubmit1').attr("disabled", false);
+                        $('#grade_td_' + i).removeClass('has-feedback');
+                        $("#spanMarkGrade").remove();
+                    });
+                }
+
             }
 
-        }
+            if (markRange == '' || markGrade == '') {
+                //MSK-000099- form validation failed
 
-        if (markRange == '' || markGrade == '') {
-            //MSK-000099- form validation failed
+                $("#btnSubmit1").attr("disabled", true);
+                e.preventDefault();
+                return false;
 
-            $("#btnSubmit1").attr("disabled", true);
+            } else {
+                $("#btnSubmit1").attr("disabled", false);
+                //return true;
+
+            }
+
+        });
+
+        function showModal2(pCashDetails) {
+            //MSK-00104
+
+            var myArray = $(pCashDetails).data("id").split(',');
+
+            var id = myArray[0];
+            var admin_index = myArray[1];
+
+            var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+
+                    document.getElementById('pettyCashDetails').innerHTML = this.responseText; //MSK-000137
+                    $('#modalViewPettyCash').modal('show');
+                }
+
+            };
+
+            xhttp.open("GET", "petty_cash_details.php?id=" + id + "&admin_index=" + admin_index, true);
+            xhttp.send(); //MSK-00105-Ajax End
+
+        };
+
+        $('body').on('click', '.confirm-approve', function(e) {
+            //MSK-000122	
+
             e.preventDefault();
-            return false;
+            var id = $(this).data('id');
+            $('#approveConfirm').data('id1', id).modal('show'); //MSK-000123
 
-        } else {
-            $("#btnSubmit1").attr("disabled", false);
-            //return true;
+        });
 
+        $('#btnYesApprove').click(function() {
+            //MSK-000126
+
+            var myArray = $('#approveConfirm').data('id1').split(',');
+
+            var id = myArray[0];
+            var admin_index = myArray[1];
+
+            var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    var myArray1 = eval(xhttp.responseText);
+
+                    var msg = myArray1[0];
+
+                    if (msg = 1) {
+
+                        $('#approveConfirm').modal('hide');
+                        window.location.reload();
+
+                        var myModal = $('#approve_Success');
+                        myModal.modal('show');
+
+                        clearTimeout(myModal.data('hideInterval'));
+                        myModal.data('hideInterval', setTimeout(function() {
+                            myModal.modal('hide');
+                        }, 3000));
+
+                    }
+
+                    if (msg = 2) {
+
+                        var myModal = $('#connection_Problem');
+                        myModal.modal('show');
+
+                        clearTimeout(myModal.data('hideInterval'));
+                        myModal.data('hideInterval', setTimeout(function() {
+                            myModal.modal('hide');
+                        }, 3000));
+
+                    }
+
+
+                }
+
+            };
+
+            xhttp.open("GET", "../model/approve_petty_cash.php?id=" + id + "&admin_index=" + admin_index, true);
+            xhttp.send(); //MSK-00105-Ajax End
+
+        });
+
+
+        function scrollDown() {
+
+            window.scrollTo(0, document.body.scrollHeight);
         }
+        </script>
 
-    });
+        <!--redirect your own url when clicking browser back button -->
+        <script>
+        (function(window, location) {
+            history.replaceState(null, document.title, location.pathname + "#!/history");
+            history.pushState(null, document.title, location.pathname);
 
-    function showModal2(pCashDetails) {
-        //MSK-00104
-
-        var myArray = $(pCashDetails).data("id").split(',');
-
-        var id = myArray[0];
-        var admin_index = myArray[1];
-
-        var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
-        xhttp.onreadystatechange = function() {
-
-            if (this.readyState == 4 && this.status == 200) {
-
-                document.getElementById('pettyCashDetails').innerHTML = this.responseText; //MSK-000137
-                $('#modalViewPettyCash').modal('show');
-            }
-
-        };
-
-        xhttp.open("GET", "petty_cash_details.php?id=" + id + "&admin_index=" + admin_index, true);
-        xhttp.send(); //MSK-00105-Ajax End
-
-    };
-
-    $('body').on('click', '.confirm-approve', function(e) {
-        //MSK-000122	
-
-        e.preventDefault();
-        var id = $(this).data('id');
-        $('#approveConfirm').data('id1', id).modal('show'); //MSK-000123
-
-    });
-
-    $('#btnYesApprove').click(function() {
-        //MSK-000126
-
-        var myArray = $('#approveConfirm').data('id1').split(',');
-
-        var id = myArray[0];
-        var admin_index = myArray[1];
-
-        var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
-        xhttp.onreadystatechange = function() {
-
-            if (this.readyState == 4 && this.status == 200) {
-                var myArray1 = eval(xhttp.responseText);
-
-                var msg = myArray1[0];
-
-                if (msg = 1) {
-
-                    $('#approveConfirm').modal('hide');
-                    window.location.reload();
-
-                    var myModal = $('#approve_Success');
-                    myModal.modal('show');
-
-                    clearTimeout(myModal.data('hideInterval'));
-                    myModal.data('hideInterval', setTimeout(function() {
-                        myModal.modal('hide');
-                    }, 3000));
-
+            window.addEventListener("popstate", function() {
+                if (location.hash === "#!/history") {
+                    history.replaceState(null, document.title, location.pathname);
+                    setTimeout(function() {
+                        location.replace("../index.php"); //path to when click back button
+                    }, 0);
                 }
+            }, false);
+        }(window, location));
+        </script>
 
-                if (msg = 2) {
+    </div><!-- /.content-wrapper -->
 
-                    var myModal = $('#connection_Problem');
-                    myModal.modal('show');
-
-                    clearTimeout(myModal.data('hideInterval'));
-                    myModal.data('hideInterval', setTimeout(function() {
-                        myModal.modal('hide');
-                    }, 3000));
-
-                }
-
-
-            }
-
-        };
-
-        xhttp.open("GET", "../model/approve_petty_cash.php?id=" + id + "&admin_index=" + admin_index, true);
-        xhttp.send(); //MSK-00105-Ajax End
-
-    });
-
-
-    function scrollDown() {
-
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-    </script>
-
-    <!--redirect your own url when clicking browser back button -->
-    <script>
-    (function(window, location) {
-        history.replaceState(null, document.title, location.pathname + "#!/history");
-        history.pushState(null, document.title, location.pathname);
-
-        window.addEventListener("popstate", function() {
-            if (location.hash === "#!/history") {
-                history.replaceState(null, document.title, location.pathname);
-                setTimeout(function() {
-                    location.replace("../index.php"); //path to when click back button
-                }, 0);
-            }
-        }, false);
-    }(window, location));
-    </script>
-
-</div><!-- /.content-wrapper -->
-
-<?php include_once('footer.php');?>
+    <?php include_once('footer.php');?>

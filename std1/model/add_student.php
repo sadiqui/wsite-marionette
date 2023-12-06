@@ -11,7 +11,7 @@ if(isset($_POST["do"])&&($_POST["do"]=="add_student")){
 	$email = $_POST["email"];
 	$b_date = $_POST["b_date"];
 	
-	$g_index_number = $_POST["g_index"];	
+	$g_index_number = $_POST["g_index"];
 	$g_full_name = $_POST["g_full_name"];
 	$g_i_name= $_POST["g_i_name"];
 	$g_gender = $_POST["g_gender"];

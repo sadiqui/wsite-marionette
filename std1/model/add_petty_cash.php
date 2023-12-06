@@ -54,10 +54,10 @@ if(isset($_POST["do"])&&($_POST["do"]=="add_petty_cash")){
 			
 			$sql = "INSERT INTO petty_cash_history(_desc,received_by,approved_by,year,month,date,time,amount,total_paid,invoice_number,received_type,_status)
 					VALUES ('".$_desc[$i]."','".$index_number."','".$admin_index."','".$current_year."','".$current_month."','".$current_date."','".$current_time."','".$amount[$i]."','".$total_paid."','".$invoice_number."','".$received_type."','".$_status."')";
-					
+
 			mysqli_query($conn,$sql);
-				
-			
+
+
 		}
 		
 	}
