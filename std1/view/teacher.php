@@ -205,7 +205,6 @@ if(!isset($_SERVER['HTTP_REFERER'])){
     <!-- Form validate (Before submit the form) -->
     <script>
     $('[type="file"]').change(function() {
-        //MSK-00098
 
         var fileSize = this.files[0].size;
         var maxSize = 1000000; // bytes
@@ -220,7 +219,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divPhoto1').addClass('has-feedback');
             $('#divPhoto1').append(
                 '<span id="spanPhoto" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"                                title="The file type is not allowed" ></span>'
-                );
+            );
 
         } else {
 
@@ -232,22 +231,21 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                 $('#divPhoto1').addClass('has-feedback');
                 $('#divPhoto1').append(
                     '<span id="spanPhoto" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip" title="The file size is too large" ></span>'
-                    );
+                );
 
 
             } else {
-                // MSK-00101
+
                 output.src = URL.createObjectURL(this.files[0]);
                 $("#btnSubmit").attr("disabled", false);
                 $('#divPhoto').removeClass('has-error');
-                $('#spanPhoto').remove(); // MSK-00101
+                $('#spanPhoto').remove();
 
             }
         }
     });
 
     $("#form1").submit(function(e) {
-        //MSK-000098-form1 submit
 
         var index_number = $('#index_number').val();
         var full_name = $('#full_name').val();
@@ -268,7 +266,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divIndexNumber').addClass('has-error has-feedback');
             $('#divIndexNumber').append(
                 '<span id="spanIndexNumber" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip"   	data-toggle="tooltip"    title="The index number is required" ></span>'
-                );
+            );
 
             $("#index_number").keydown(function() {
                 //MSK-00103-index_number 
@@ -288,7 +286,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divFullName').addClass('has-error has-feedback');
             $('#divFullName').append(
                 '<span id="spanFullName" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The full name is required" ></span>'
-                );
+            );
 
             $("#full_name").keydown(function() {
                 //MSK-00103-full_name 
@@ -308,7 +306,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divIName').addClass('has-error has-feedback');
             $('#divIName').append(
                 '<span id="spanIName" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The initials name is required" ></span>'
-                );
+            );
 
             $("#i_name").keydown(function() {
                 //MSK-00103-i_name 
@@ -328,7 +326,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divAddress').addClass('has-error has-feedback');
             $('#divAddress').append(
                 '<span id="spanAddress" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The address is required" ></span>'
-                );
+            );
 
             $("#address").keydown(function() {
                 //MSK-00103-address
@@ -348,7 +346,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divGender').addClass('has-error has-feedback');
             $('#divGender1').append(
                 '<span id="spanGender" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The gender is required" ></span>'
-                );
+            );
 
             $("#gender").change(function() {
                 //MSK-00103-gender
@@ -367,7 +365,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divPhone').addClass('has-error has-feedback');
             $('#divPhone1').append(
                 '<span id="spanPhone" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The phone number is required" ></span>'
-                );
+            );
 
             $("#phone").keydown(function() {
                 //MSK-00103-phone
@@ -383,7 +381,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                 $('#divPhone').addClass('has-error has-feedback');
                 $('#divPhone1').append(
                     '<span id="spanPhone" class="glyphicon glyphicon-remove form-control-feedback msk-set-color-tooltip" data-toggle="tooltip"    title="Enter valid phone number" ></span>'
-                    );
+                );
 
                 $("#phone").keydown(function() { //MSK-00105-phone
 
@@ -402,7 +400,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                             $('#divPhone').addClass('has-success has-feedback');
                             $('#divPhone1').append(
                                 '<span id="spanPhone" class="glyphicon glyphicon-ok form-control-feedback"></span>'
-                                );
+                            );
 
                         } else {
                             //MSK-00107-phone
@@ -411,7 +409,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                             $('#divPhone').addClass('has-error has-feedback');
                             $('#divPhone1').append(
                                 '<span id="spanPhone" class="glyphicon glyphicon-remove form-control-feedback msk-set-color-tooltip" data-toggle="tooltip"    title="Enter valid email address" ></span>'
-                                );
+                            );
 
                         }
 
@@ -430,7 +428,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divEmail').addClass('has-error has-feedback');
             $('#divEmail1').append(
                 '<span id="spanEmail" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The email address is required" ></span>'
-                );
+            );
 
             $("#email").keydown(function() {
                 //MSK-00103-email
@@ -446,7 +444,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                 $('#divEmail').addClass('has-error has-feedback');
                 $('#divEmail1').append(
                     '<span id="spanEmail" class="glyphicon glyphicon-remove form-control-feedback msk-set-color-tooltip" data-toggle="tooltip"    title="Enter valid email address" ></span>'
-                    );
+                );
 
                 $("#email").keydown(function() { //MSK-00109-email
 
@@ -465,7 +463,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                             $('#divEmail').addClass('has-success has-feedback');
                             $('#divEmail1').append(
                                 '<span id="spanEmail" class="glyphicon glyphicon-ok form-control-feedback"></span>'
-                                );
+                            );
 
                         } else {
                             //MSK-00111-email
@@ -474,7 +472,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
                             $('#divEmail').addClass('has-error has-feedback');
                             $('#divEmail1').append(
                                 '<span id="spanEmail" class="glyphicon glyphicon-remove form-control-feedback msk-set-color-tooltip" data-toggle="tooltip"    title="Enter valid email address" ></span>'
-                                );
+                            );
 
                         }
 
@@ -489,7 +487,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
         }
 
         if (photo == '') {
-            //MSK-00102-photo
+
             output.src = "../uploads/error.png";
 
             $("#btnSubmit").attr("disabled", true);
@@ -497,7 +495,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             $('#divPhoto1').addClass('has-feedback');
             $('#divPhoto1').append(
                 '<span id="spanPhoto" class="glyphicon glyphicon-remove form-control-feedback msk-set-width-tooltip" data-toggle="tooltip"    title="The image is required" ></span>'
-                );
+            );
 
         } else {
 
@@ -505,7 +503,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 
         if (full_name == '' || i_name == '' || address == '' || gender == '' || phone == '' || email == '' ||
             mailformat.test(email) == false || telformat.test(phone) == false || photo == '') {
-            //MSK-000098- form1 validation failed
+
             $("#btnSubmit").attr("disabled", true);
             e.preventDefault();
             return false;
@@ -519,7 +517,7 @@ if(!isset($_SERVER['HTTP_REFERER'])){
 
     <!--run insert alert using PHP & JS/jQuery  -->
     <?php
-//MSK-000143-10-PHP-JS-INSERT
+
 if(isset($_GET["do"])&&($_GET["do"]=="alert_from_insert")){
   
 $msg=$_GET['msg'];
@@ -527,14 +525,14 @@ $msg=$_GET['msg'];
 	if($msg==1){
 		echo"
 			<script>
-			
+
 			var myModal = $('#index_Duplicated');
 			myModal.modal('show');
-			
+
     		myModal.data('hideInterval', setTimeout(function(){
     			myModal.modal('hide');
     		}, 3000));
-						
+
 			</script>
 		";
 	
@@ -611,15 +609,15 @@ $msg=$_GET['msg'];
 	if($msg==6){
 		echo"
 			<script>
-			
+
 			var myModal = $('#upload_error1');
 			myModal.modal('show');
-			
+
 			clearTimeout(myModal.data('hideInterval'));
     		myModal.data('hideInterval', setTimeout(function(){
     			myModal.modal('hide');
     		}, 3000));
-			
+
 			</script>
 		";
 	
