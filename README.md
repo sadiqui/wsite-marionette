@@ -19,7 +19,7 @@
 - **Invoice Management**
 
 ## Instructions (for local hosting)
-````php
+``php
 $servername = "localhost";
 $username   = "root";
 $password   = "";
