@@ -18,12 +18,13 @@
 - **Subject Management**
 - **Invoice Management**
 
-## Instructions (for local hosting)
+## For local hosting
+
 ``php
-$servername = "localhost";
-$username   = "root";
-$password   = "";
-$dbname     = "std_db";
+- $servername = "localhost";
+- $username   = "root";
+- $password   = "";
+- $dbname     = "std_db";
 
 ## Admin
 
