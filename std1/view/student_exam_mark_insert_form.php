@@ -19,10 +19,10 @@ if(!isset($_SERVER['HTTP_REFERER'])){
             			 <form role="form" action="../index.php" method="post" id="formExam">
             				<div class="panel-body"> <!-- Start of modal body--> 
                                 <div class="form-group " id="divExam">
-                                	
-                						<label for="" >Exam</label>
-                                	
-        								<select class="form-control"  id="exam" name="exam_id">			
+
+								<label for="" >Exam</label>
+
+								<select class="form-control"  id="exam" name="exam_id">			
      										<option>Select Exam</option>
 <?php
 //MSK-00098

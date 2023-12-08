@@ -249,7 +249,6 @@ function editMyProfile(my_index) {
                         var password = document.getElementById("password1").value;
 
                         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                        var telformat = /\d{3}[\-]\d{3}[\-]\d{4}$/;
 
                         if (full_name == '') {
                             //MSK-00102-full_name 

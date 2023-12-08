@@ -496,18 +496,18 @@ echo "<script>showBarChart('$monthly_income1');</script>";
         <script>
         function showEvent(event_id) {
 
-            var xhttp = new XMLHttpRequest(); //MSK-00105-Ajax Start  
+            var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
 
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById('showEvent').innerHTML = this.responseText; //MSK-000132
+                    document.getElementById('showEvent').innerHTML = this.responseText;
                     $('#modalviewEvent').modal('show');
                 }
 
             };
 
             xhttp.open("GET", "show_events1.php?event_id=" + event_id, true);
-            xhttp.send(); //MSK-00105-Ajax End
+            xhttp.send();
         };
 
         function get_calendar(day_no, days) {

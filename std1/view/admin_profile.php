@@ -149,7 +149,7 @@ $password=$row1['password'];
 
                 document.getElementById('my_profile').innerHTML = this.responseText; //MSK-000132
 
-                var xhttp1 = new XMLHttpRequest(); //MSK-000131-Start Ajax  
+                var xhttp1 = new XMLHttpRequest();
                 xhttp1.onreadystatechange = function() {
 
                     if (this.readyState == 4 && this.status == 200) {
@@ -222,7 +222,6 @@ $password=$row1['password'];
                             var password = document.getElementById("password1").value;
 
                             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                            var telformat = /\d{3}[\-]\d{3}[\-]\d{4}$/;
 
                             if (full_name == '') {
                                 //MSK-00102-full_name 

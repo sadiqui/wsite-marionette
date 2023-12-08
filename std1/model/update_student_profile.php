@@ -90,26 +90,19 @@ if(isset($_POST["do"])&&($_POST["do"]=="update_student_profile")){
 					$sql4="INSERT INTO user (email,password,type) 
 						   VALUES ( '".$email."','".$password."','Student')";
 					mysqli_query($conn,$sql4);
-					
+
 				}
 				$msg+=1;
-				//MSK-000143-U-4 The record has been successfully updated in the database.
 		
 			}else{
 				$msg+=2;
-				//MSK-000143-U-6 Connection problem	
 			}
-			
-			
-			
 		}else{
-			
 			//There is haven't image root folder.
 		}
-		
 	}
 	
-	header("Location:view/my_profile.php?do=alert_from_update&msg=$msg");//MSK-000143-5
+	header("Location:view/my_profile.php?do=alert_from_update&msg=$msg");
 
 }
 ?>

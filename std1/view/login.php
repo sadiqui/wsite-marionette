@@ -146,24 +146,25 @@ body {
 
 
     <?php
-if(isset($_GET["do"])&&($_GET["do"]=="login_error")){
+if (isset($_GET["do"]) && ($_GET["do"] == "login_error")) {
+    $msg = $_GET['msg'];
 
-	$msg=$_GET['msg'];
+    // Validate the $msg parameter against a predefined set of allowed values
+    $allowedMessages = array(1);
+    if (in_array($msg, $allowedMessages)) {
+        // Properly escape the $msg value in the JavaScript code
+        $escapedMsg = htmlspecialchars($msg, ENT_QUOTES, 'UTF-8');
 
-	if($msg==1){
-		echo"
-			<script>
-
-			var myModal = $('#login_error');
-			myModal.modal('show');
-
-    		myModal.data('hideInterval', setTimeout(function(){
-    			myModal.modal('hide');
-    		}, 3000));
-
-			</script>
-		";
-	}
+        echo "
+            <script>
+                var myModal = $('#login_error');
+                myModal.modal('show');
+                myModal.data('hideInterval', setTimeout(function () {
+                    myModal.modal('hide');
+                }, 3000));
+            </script>
+        ";
+    }
 }
 ?>
 
