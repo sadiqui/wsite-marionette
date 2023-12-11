@@ -93,3 +93,9 @@ To set up the system, use the following database configuration:
 - $username   = "root";
 - $password   = "";
 - $dbname     = "std_db";
+
+### Requirements
+- PHP 5.5
+- MYSQL 4.6
+- Text Editor
+  
